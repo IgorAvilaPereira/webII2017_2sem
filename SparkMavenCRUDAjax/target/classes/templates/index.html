@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            var request = null;
+
+            function createRequest() {
+                try {
+                    request = new XMLHttpRequest();
+                } catch (trymicrosoft) {
+                    try {
+                        request = new ActiveXObject("Msxml2.XMLHTTP");
+                    } catch (othermicrosoft) {
+                        try {
+                            request = new ActiveXObject("Microsoft.XMLHTTP");
+                        } catch (failed) {
+                            request = null;
+                        }
+                    }
+                }
+                if (request === null)
+                    alert("Error creating request object!");
+            }
+
+            function atualizaPagina() {
+                if (request.readyState === 4) {
+                    var respostaDoServidor = request.responseText;
+                    //alert(respostaDoServidor);
+                    document.getElementById("conteudo").innerHTML += respostaDoServidor;
+                }
+            }
+
+            function getInformacaoQualquer() {
+                createRequest(); // cria objeto ajax
+                var url = "http://localhost:4567/testeajax/luiz"; // construindo a requisicao
+                request.open("GET", url, true); // envia a requisicao
+                request.onreadystatechange = atualizaPagina; // definindo funcao responsavel por tratar a resposta do servidor
+                request.send(null);
+            }
+            
+            
+            function hoje() {
+                createRequest(); // cria objeto ajax
+                var campo = document.getElementById("teste").value;
+                var url = "http://localhost:4567/testeajax/"+campo; // construindo a requisicao
+                request.open("GET", url, true); // envia a requisicao
+                request.onreadystatechange = atualizaPagina; // definindo funcao responsavel por tratar a resposta do servidor
+                request.send(null);
+            }
+        </script>
+    </head>
+    <body>                
+        <input value="Testando ajax" type="button"  onClick="getInformacaoQualquer();" />
+        
+        <input type="text" name="teste" id="teste"> <button onClick="hoje();"> Hoje </button>
+
+            <div id="conteudo">
+                
+            </div>    
+            
+        <p style="color: red;"> oi, {{name}}! (testando o css) </p>
+        <form action="/delete_multiple" method="post">
+            <table>
+                {{#pessoas}}
+                <tr> 
+                    <td> <input type="checkbox" name="id" value="{{id}}"> </td> 
+                    <td> <a href="/delete/{{id}}"> Deletar </a> </td> 
+                    <td> <a href="/screen_update/{{id}}"> Editar </a> </td> 
+                    <td>{{nome}}</td> 
+                    <td>{{sobrenome}}</td>
+                </tr>
+                {{/pessoas}}
+            </table> <br>
+            <input type="submit" value="Excluir Multiplo (selecione os checkboxes)">
+        </form>
+        <br>
+        <a href="/screen_insert"> Adicionar </a>
+
+        <br>
+        <br>
+        <a href="/teste.html"> Link para html estatico... </a>
+        <br>
+        <br>
+        <button onclick="alert('testando o js')"> Teste o js</button>
+    </body>
+</html>
