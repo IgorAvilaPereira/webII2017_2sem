@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/iapereira/NetBeansProjects/WebFarroupilha/web/index.jsp</file>
+            <file>file:/home/iapereira/NetBeansProjects/WebFarroupilha/src/java/command/Command.java</file>
+            <file>file:/home/iapereira/NetBeansProjects/WebFarroupilha/web/listar.jsp</file>
+            <file>file:/home/iapereira/NetBeansProjects/WebFarroupilha/src/java/servlet/Servlet.java</file>
+            <file>file:/home/iapereira/NetBeansProjects/WebFarroupilha/src/java/command/TelaAlterarCommand.java</file>
+            <file>file:/home/iapereira/NetBeansProjects/WebFarroupilha/src/java/command/ListarCommand.java</file>
+            <file>file:/home/iapereira/NetBeansProjects/WebFarroupilha/src/java/command/AlterarCommand.java</file>
+            <file>file:/home/iapereira/NetBeansProjects/WebFarroupilha/src/java/command/AdicionarCommand.java</file>
+            <file>file:/home/iapereira/NetBeansProjects/WebFarroupilha/src/java/command/ExcluirCommand.java</file>
+        </group>
+    </open-files>
+</project-private>
