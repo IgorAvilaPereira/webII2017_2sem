@@ -7,6 +7,7 @@ package model;
 
 import java.io.Serializable;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,6 +15,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -48,6 +50,9 @@ public class Usuario implements Serializable {
     private String nome;
     @Column(name = "preferencias")
     private Character preferencias;
+    @OneToOne(cascade = CascadeType.PERSIST)
+    private Endereco endereco;
+    
 
     public Usuario() {
     }
@@ -112,5 +117,15 @@ public class Usuario implements Serializable {
     public String toString() {
         return "model.Usuario[ id=" + id + " ]";
     }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+    
+    
     
 }

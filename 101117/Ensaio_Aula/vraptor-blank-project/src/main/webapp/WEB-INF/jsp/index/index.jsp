@@ -10,8 +10,14 @@
 
         <ul>
             <c:forEach items="${vetUsuario}" var="usuario">
-                <li>${usuario.nome}</li>
-            </c:forEach>
+                <li>
+                    <a href="${pageContext.request.contextPath}/tchan/${usuario.id}"> Excluir </a>  
+                    <a href="${pageContext.request.contextPath}/virguloides/${usuario.id}">Alterar</a>  
+                    ${usuario.nome}
+                </li>
+           </c:forEach>
         </ul>
+      <a href="${pageContext.request.contextPath}/aquaman"> Adicionar </a>  
+
     </body>
 </html>
