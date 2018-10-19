@@ -20,7 +20,7 @@
             <version>1.6.1</version>
         </dependency>
         
-       <!-- template mustache -->
+        <!-- template mustache -->
         <dependency>
             <groupId>com.sparkjava</groupId>
             <artifactId>spark-template-mustache</artifactId>
@@ -29,11 +29,13 @@
 
 
         <!-- nucleo do framework -->
+        <!-- https://mvnrepository.com/artifact/com.sparkjava/spark-core -->
         <dependency>
             <groupId>com.sparkjava</groupId>
             <artifactId>spark-core</artifactId>
-            <version>2.5.2</version>
-        </dependency>        
+            <version>2.8.0</version>
+        </dependency>
+  
     </dependencies>
     <name>SparkTeste</name>
 </project>

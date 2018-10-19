@@ -10,7 +10,7 @@ public class HelloWorld {
     public static void main(String[] args) {
         staticFiles.location("/public"); // Static files
 
-        get("/hello", (req, res) -> {
+        get("/", (req, res) -> {
             return "Hello Worsssld";
         });    
         
